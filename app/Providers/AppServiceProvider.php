@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+// Fix DB Legth Error
+use Illuminate\Support\Facades\Schema; //Import Schema
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //Solved by increasing StringLength
+        Schema::defaultStringLength(191); 
+
     }
 
     /**
